@@ -1,5 +1,5 @@
 # frozen_string_literal: true
-
+# Based on http://www.swissiban.com/fr.htm
 module ActiveModel
   module Validations
     class IbanValidator < EachValidator
@@ -9,6 +9,7 @@ module ActiveModel
 
         return unless validate_iban_length(record, attribute, value, options)
 
+        validate_start_with_ch(record, attribute, value, options)
         validate_iban_with_regex(record, attribute, value, options)
         validate_iban_format(record, attribute, value, options)
       end
@@ -39,12 +40,22 @@ module ActiveModel
       end
 
       def validate_iban_format(record, attribute, value, options)
-        puts "i'm here"
         return if iban_format_valid?(value)
 
         record.errors.add(
           attribute,
           :iban_format_not_valid,
+          message: options[:message],
+          value: value
+        )
+      end
+
+      def validate_start_with_ch(record, attribute, value, options)
+        return if value.downcase.start_with?('ch')
+
+        record.errors.add(
+          attribute,
+          :must_start_with_ch,
           message: options[:message],
           value: value
         )
@@ -69,7 +80,6 @@ module ActiveModel
                           # 'A'..'Z'
                         when 65..90 then (byte - 55).to_s # 55 = 'A'.ord + 10
                         else
-                          errors.add(:iban, I18n.t('validators.partner_info.iban.not_valid'))
                           return nil
                         end
         end

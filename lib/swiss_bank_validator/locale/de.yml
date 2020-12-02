@@ -2,9 +2,10 @@ de:
   activemodel: &activemodel
     errors:
       messages:
-        invalid_iban_length: "La longueur de l'IBAN n'est pas correct. Il doit être de %{value}"
-        space_not_authorized_in_iban: "Les espaces ne sont pas autorisés"
-        iban_format_not_valid: "Le format de l'IBAN n'est pas valide"
+        invalid_iban_length: "Überprüfe bitte die Länge der angegebenen IBAN. Sie muss %{value} Charakter lang sein."
+        space_not_authorized_in_iban: Abstände sind nicht zugelassen.
+        iban_format_not_valid: Das Format der angegebenen IBAN ist nicht gültig.
+        must_start_with_ch: "Beginnt mit CH"
 
   activerecord:
     <<: *activemodel

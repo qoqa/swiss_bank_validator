@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    iban_validator (0.1.0)
+    swiss_bank_validator (0.1.0)
       activemodel
 
 GEM
@@ -16,10 +16,24 @@ GEM
       tzinfo (~> 1.1)
       zeitwerk (~> 2.2, >= 2.2.2)
     concurrent-ruby (1.1.7)
+    diff-lcs (1.4.4)
     i18n (1.8.5)
       concurrent-ruby (~> 1.0)
     minitest (5.14.2)
     rake (12.3.3)
+    rspec (3.10.0)
+      rspec-core (~> 3.10.0)
+      rspec-expectations (~> 3.10.0)
+      rspec-mocks (~> 3.10.0)
+    rspec-core (3.10.0)
+      rspec-support (~> 3.10.0)
+    rspec-expectations (3.10.0)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.10.0)
+    rspec-mocks (3.10.0)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.10.0)
+    rspec-support (3.10.0)
     thread_safe (0.3.6)
     tzinfo (1.2.8)
       thread_safe (~> 0.1)
@@ -29,9 +43,9 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  iban_validator!
-  minitest (~> 5.0)
   rake (~> 12.0)
+  rspec
+  swiss_bank_validator!
 
 BUNDLED WITH
    2.1.4
