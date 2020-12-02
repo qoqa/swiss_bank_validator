@@ -90,7 +90,7 @@ module ActiveModel
     module ClassMethods
       # Validates whether or not the specified iban is valid.
       #
-      #   class account < ActiveRecord::Base
+      #   class Account < ActiveRecord::Base
       #     validates_iban_format_of :iban
       #   end
       #
