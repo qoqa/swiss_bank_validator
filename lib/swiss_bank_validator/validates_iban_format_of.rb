@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 # Based on http://www.swissiban.com/fr.htm
 module ActiveModel
   module Validations
@@ -13,7 +14,6 @@ module ActiveModel
         validate_iban_with_regex(record, attribute, value, options)
         validate_iban_format(record, attribute, value, options)
       end
-
 
       def validate_iban_length(record, attribute, value, options)
         return true if value.length == SwissBankValidator::IBAN_LENGTH
@@ -69,11 +69,11 @@ module ActiveModel
       end
 
       def numerify_iban(iban)
-        return "" if iban.blank?
+        return '' if iban.blank?
 
-        numerified = ""
+        numerified = ''
         code = iban.to_s.strip.gsub(/\s+/, '').upcase
-        (code[4..-1] + code[0..3]).each_byte do |byte|
+        (code[4..] + code[0..3]).each_byte do |byte|
           numerified += case byte
                           # 0..9
                         when 48..57 then byte.chr
@@ -85,7 +85,6 @@ module ActiveModel
         end
         numerified
       end
-
     end
 
     module ClassMethods
