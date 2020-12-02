@@ -1,0 +1,10 @@
+en:
+  activemodel: &activemodel
+    errors:
+      messages:
+        invalid_iban_length: "IBAN length is not valid. must be %{value}"
+        space_not_authorized_in_iban: "Space are not authorized"
+        iban_format_not_valid: "Your IBAN format is not valid"
+
+  activerecord:
+    <<: *activemodel
