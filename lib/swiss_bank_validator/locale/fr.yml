@@ -2,7 +2,7 @@ fr:
   activemodel: &activemodel
     errors:
       messages:
-        invalid_iban_length: "La longueur de l'IBAN n'est pas correct. Il doit être de %{value}"
+        invalid_iban_length: "ne fait pas la bonne longueur (doit comporter %{value} caractères)"
         space_not_authorized_in_iban: "Les espaces ne sont pas autorisés"
         iban_format_not_valid: "Le format de l'IBAN n'est pas valide"
         must_start_with_ch: "doit commencer par CH"
