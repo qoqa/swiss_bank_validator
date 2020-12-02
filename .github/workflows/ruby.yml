@@ -9,9 +9,9 @@ name: Ruby
 
 on:
   push:
-    branches: [ main, staging ]
+    branches: [ main ]
   pull_request:
-    branches: [ main, staging ]
+    branches: [ main ]
 
 jobs:
   test:
@@ -26,5 +26,5 @@ jobs:
         ruby-version: 2.7.2
     - name: Install dependencies
       run: bundle install
-    - name: Run tests
+    - name: Run tests & Rubocop
       run: bundle exec rake
