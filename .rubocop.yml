@@ -9,3 +9,6 @@ Metrics/MethodLength:
 
 Metrics/BlockLength:
   Max: 50
+
+Style/RegexpLiteral:
+  EnforcedStyle: mixed

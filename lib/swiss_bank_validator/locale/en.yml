@@ -6,6 +6,7 @@ en:
         space_not_authorized_in_iban: "Spaces are not authorized"
         iban_format_not_valid: "Your IBAN format is not valid"
         must_start_with_ch: "Must start with CH"
+        invalid_bank_field: Not a valid Bank field. It does not accept special character (&/<>°\|...)
 
   activerecord:
     <<: *activemodel

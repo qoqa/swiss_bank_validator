@@ -6,6 +6,7 @@ de:
         space_not_authorized_in_iban: Abstände sind nicht zugelassen.
         iban_format_not_valid: Das Format der angegebenen IBAN ist nicht gültig.
         must_start_with_ch: "Beginnt mit CH"
+        invalid_bank_field: Sonderzeichen (&/<>°\|...) sind nicht erlaubt.
 
   activerecord:
     <<: *activemodel
