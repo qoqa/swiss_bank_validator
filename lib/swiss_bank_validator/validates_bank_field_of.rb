@@ -1,6 +1,5 @@
 # frozen_string_literal: true
 
-# Based on http://www.swissiban.com/fr.htm
 module ActiveModel
   module Validations
     class BankFieldValidator < EachValidator
