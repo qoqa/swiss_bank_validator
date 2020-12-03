@@ -2,6 +2,8 @@
 
 Allow to valid a Swiss Iban passed on the rules of http://www.swissiban.com/
 
+You can also validate field to be complient with bank (without special character). Useful if you want to create batch paiement
+
 ## Installation
 
 Add this line to your application's Gemfile:
@@ -20,6 +22,8 @@ Or install it yourself as:
 
 ## Usage
 
+To validate an IBAN
+
 ```ruby
  class Account < ActiveRecord::Base
    validates_iban_format_of :account_number
@@ -29,6 +33,20 @@ Or install it yourself as:
 
  class Account < ActiveRecord::Base
    validates :account_number, iban: true
+ end
+```
+
+To validate a bank field
+
+```ruby
+ class Account < ActiveRecord::Base
+   validates_bank_field_of :name
+ end
+
+ # or
+
+ class Account < ActiveRecord::Base
+   validates :name, bank_field: true
  end
 ```
 
