@@ -5,8 +5,6 @@ module SwissBankValidator
   IBAN_LENGTH = 21
 
   # Regex that allow only field accepted by Swiss bank to initiate a payment
-  # rubocop:disable Style/RedundantRegexpEscape
-  BANK_REGEX = %r{\A[a-zA-Z0-9\.\,\;\:\’\+\-\(\)\?\*\[\]\{\}\`\´\~\'\s\!\“#%÷=@_$£àáâäçèéêëìíîïñòóôöùúûüýßÀÁÂÄÇÈÉÊËÌÍÎÏ
-  ÒÓÔÖÙÚÛÜÑ]*\z}.freeze
-  # rubocop:enable Style/RedundantRegexpEscape
+  BANK_REGEX = %r{\A[a-zA-Z0-9.,;:’+\-()?*\[\]{}`´~'\s!“#%÷=@_$£
+                     àáâäçèéêëìíîïñòóôöùúûüýßÀÁÂÄÇÈÉÊËÌÍÎÏÒÓÔÖÙÚÛÜÑ]*\z}x.freeze
 end
