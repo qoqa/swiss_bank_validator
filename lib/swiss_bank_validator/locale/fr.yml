@@ -8,6 +8,5 @@ fr:
         must_start_with_ch: "doit commencer par CH"
         invalid_bank_field: Ce champ n'accepte pas certains caractères spéciaux (&/<>°\|...)
 
-
   activerecord:
     <<: *activemodel
