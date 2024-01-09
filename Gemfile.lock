@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    swiss_bank_validator (0.6.2)
+    swiss_bank_validator (1.0.1)
       activemodel (>= 6.1.7.6)
       rexml (~> 3.2.5)
 
